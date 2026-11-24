@@ -1,0 +1,226 @@
+{
+  "info": {
+    "name": "API MVC - El Grano Dorado",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost/3657_GALLEGOS_FRANCISCO_API_MVC/public"
+    }
+  ],
+  "item": [
+    {
+      "name": "1. Categorias",
+      "item": [
+        {
+          "name": "Listar Categorías",
+          "request": { "method": "GET", "url": "{{base_url}}/api/categorias" }
+        },
+        {
+          "name": "Obtener Categoría por ID",
+          "request": { "method": "GET", "url": "{{base_url}}/api/categorias/1" }
+        },
+        {
+          "name": "Crear Categoría",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Nombre\": \"Bebidas de Temporada\",\n  \"Descripcion\": \"Especialidades servidas por estación\"\n}"
+            },
+            "url": "{{base_url}}/api/categorias"
+          }
+        },
+        {
+          "name": "Actualizar Categoría (ID 11)",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Nombre\": \"Bebidas Especiales\",\n  \"Descripcion\": \"Edición limitada de temporada\"\n}"
+            },
+            "url": "{{base_url}}/api/categorias/11"
+          }
+        },
+        {
+          "name": "Eliminar Categoría (ID 11)",
+          "request": { "method": "DELETE", "url": "{{base_url}}/api/categorias/11" }
+        }
+      ]
+    },
+    {
+      "name": "2. Productos",
+      "item": [
+        {
+          "name": "Listar Productos",
+          "request": { "method": "GET", "url": "{{base_url}}/api/productos" }
+        },
+        {
+          "name": "Obtener Producto por ID",
+          "request": { "method": "GET", "url": "{{base_url}}/api/productos/1" }
+        },
+        {
+          "name": "Crear Producto",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"IdCategoria\": 1,\n  \"Nombre\": \"Flat White\",\n  \"Descripcion\": \"Doble ristretto con microespuma de leche\",\n  \"Precio\": 4.80\n}"
+            },
+            "url": "{{base_url}}/api/productos"
+          }
+        },
+        {
+          "name": "Actualizar Producto (ID 11)",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"IdCategoria\": 1,\n  \"Nombre\": \"Flat White Doble\",\n  \"Descripcion\": \"Doble ristretto intenso con leche texturizada\",\n  \"Precio\": 5.20,\n  \"Estado\": true\n}"
+            },
+            "url": "{{base_url}}/api/productos/11"
+          }
+        },
+        {
+          "name": "Eliminar Producto Lógico (ID 11)",
+          "request": { "method": "DELETE", "url": "{{base_url}}/api/productos/11" }
+        }
+      ]
+    },
+    {
+      "name": "3. Roles",
+      "item": [
+        {
+          "name": "Listar Roles",
+          "request": { "method": "GET", "url": "{{base_url}}/api/roles" }
+        },
+        {
+          "name": "Obtener Rol por ID",
+          "request": { "method": "GET", "url": "{{base_url}}/api/roles/1" }
+        },
+        {
+          "name": "Crear Rol",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Nombre\": \"Practicante de Barra\",\n  \"NivelAcceso\": 8\n}"
+            },
+            "url": "{{base_url}}/api/roles"
+          }
+        },
+        {
+          "name": "Actualizar Rol (ID 11)",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Nombre\": \"Asistente de Barra\",\n  \"NivelAcceso\": 7\n}"
+            },
+            "url": "{{base_url}}/api/roles/11"
+          }
+        },
+        {
+          "name": "Eliminar Rol (ID 11)",
+          "request": { "method": "DELETE", "url": "{{base_url}}/api/roles/11" }
+        }
+      ]
+    },
+    {
+      "name": "4. Usuarios",
+      "item": [
+        {
+          "name": "Listar Usuarios",
+          "request": { "method": "GET", "url": "{{base_url}}/api/usuarios" }
+        },
+        {
+          "name": "Obtener Usuario por ID",
+          "request": { "method": "GET", "url": "{{base_url}}/api/usuarios/1" }
+        },
+        {
+          "name": "Crear Usuario",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"IdRol\": 6,\n  \"Nombres\": \"Camila\",\n  \"Apellidos\": \"Torres\",\n  \"Email\": \"ctorres@elgranodorado.com\"\n}"
+            },
+            "url": "{{base_url}}/api/usuarios"
+          }
+        },
+        {
+          "name": "Actualizar Usuario (ID 11)",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"IdRol\": 3,\n  \"Nombres\": \"Camila Andrea\",\n  \"Apellidos\": \"Torres\",\n  \"Email\": \"ctorres@elgranodorado.com\",\n  \"Activo\": true\n}"
+            },
+            "url": "{{base_url}}/api/usuarios/11"
+          }
+        },
+        {
+          "name": "Eliminar Usuario Lógico (ID 11)",
+          "request": { "method": "DELETE", "url": "{{base_url}}/api/usuarios/11" }
+        }
+      ]
+    },
+    {
+      "name": "5. Pedidos",
+      "item": [
+        {
+          "name": "Listar Pedidos",
+          "request": { "method": "GET", "url": "{{base_url}}/api/pedidos" }
+        },
+        {
+          "name": "Obtener Pedido + Detalle (ID 1)",
+          "request": { "method": "GET", "url": "{{base_url}}/api/pedidos/1" }
+        },
+        {
+          "name": "Crear Pedido + Detalles",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"IdUsuario\": 5,\n  \"MetodoPago\": \"Yape/Plin\",\n  \"Productos\": [\n    { \"IdProducto\": 1, \"Cantidad\": 2 },\n    { \"IdProducto\": 3, \"Cantidad\": 1 }\n  ]\n}"
+            },
+            "url": "{{base_url}}/api/pedidos"
+          }
+        },
+        {
+          "name": "Actualizar Pedido (ID 11)",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"IdUsuario\": 6,\n  \"MetodoPago\": \"Tarjeta\",\n  \"Productos\": [\n    { \"IdProducto\": 2, \"Cantidad\": 2 }\n  ]\n}"
+            },
+            "url": "{{base_url}}/api/pedidos/11"
+          }
+        },
+        {
+          "name": "Eliminar Pedido (ID 11)",
+          "request": { "method": "DELETE", "url": "{{base_url}}/api/pedidos/11" }
+        },
+        {
+          "name": "Reporte Ventas por Rango (SP)",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/api/pedidos/ventas?inicio=2026-10-01 00:00:00&fin=2026-10-31 23:59:59"
+          }
+        }
+      ]
+    }
+  ]
+}
